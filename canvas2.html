@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background: black;
+			}
+			#c1{
+				background: white;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="c1" width="400" height="400"></canvas>
+		<script type="text/javascript">
+			var box = document.getElementById('c1');
+			var oc = box.getContext('2d');
+			/*box.onmousedown = function(ev){
+				var ev = ev||window.event;
+				oc.moveTo(ev.clientX-box.offsetLeft,ev.clientY-box.offsetTop)
+				document.onmousemove = function(ev){
+					var ev = ev||window.event;
+					oc.lineTo(ev.clientX-box.offsetLeft,ev.clientY-box.offsetTop)
+					oc.stroke();
+				}
+				document.onmouseup = function(){
+					document.onmouseup = document.onmousemove = null;
+				}
+			}*/
+			
+			var num  = 0;
+			oc.fillRect(0,0,100,100);
+			setInterval(function(){
+				num++;
+				console.log(num)
+				oc.clearRect(0,0,box.width,box.height);
+				oc.fillRect(num,num,100,100);
+			},30)
+			
+		</script>
+	</body>
+</html>

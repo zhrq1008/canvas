@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background: black;
+			}
+			#c1{
+				background: white;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="c1" width="400" height="400"></canvas>
+		<script type="text/javascript">
+			var box = document.getElementById('c1');
+			var oc = box.getContext('2d');
+//			oc.fillStyle = 'red'
+//			oc.strokeStyle = 'blue'
+//			oc.lineWidth = 10
+//			oc.lineJoin ='round'
+//			oc.lineJoin = "bevel";
+//			
+//			oc.fillRect(50,50,100,100)
+//			oc.strokeRect(50.5,50.5,100,100)
+			/*oc.beginPath();
+			oc.moveTo(100,200)
+			oc.lineTo(200,300)
+			oc.lineTo(300,300)
+			oc.closePath()
+			oc.stroke();
+			oc.fill()*/
+			
+			oc.beginPath();
+			oc.rect(100,100,100,100)
+			oc.closePath()
+			oc.stroke();
+			oc.fill()
+			
+			
+			oc.clearRect(0,0,oc.Width,oc.Height)
+			/*
+			 绘制方块
+			fillRect(L,T,W,H)默认颜色是黑色
+			strokeRect(L,T,W,H)带边框的方块
+			设置绘图
+			fillStyle 填充颜色（绘制canvas是有顺序的）
+			lineWidth 线宽度，是一个数值
+			strokeStyle 边线颜色
+			边界绘制
+			lineJoin 边界连接点样式    -miter(默认)、round(圆角）、bevel(斜角)
+			lineCap 端点样式 -butt(默认)、round(圆角)、square(高度多出为宽一半的值)
+			绘制路径
+			beginPath:开始绘制
+			closePath:结束绘制路径
+			moveTo:移动到绘制的新目标点
+			lineTo：新的目标点
+			
+			stroke 画线默认黑色
+			fill 填充默认黑色
+			rect 矩形区域
+			clearRect 删除一个画布的矩形区域
+			save 保存路径
+			restore 恢复路径
+			
+			
+			*/
+			
+			
+		</script>
+	</body>
+</html>

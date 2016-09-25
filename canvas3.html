@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background: black;
+			
+			}
+			#oc{
+				background:white;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			画圆
+			arc(x,y,起始弧度，结束弧度[弧度和角度的关系 Math.pI/180]，旋转方向【默认false】)
+			
+			arcTo(x1,y1,x2,y2,r)-第一组坐标，第二组坐标，半径
+			quadaticCurveTo(dx,dy,x1,y1)-贝塞尔曲线，第一组控制点，第二组结束坐标
+			bezierCurveTo(dx1,dy1,dx2,dy2,x1,y1)-贝塞尔曲线：第一组控制点、第二组控制点、第三组结束坐标
+		变换
+		translate
+		偏移：从起始点为基准点，移动到当前坐标位置
+		rotate
+		旋转：参数为弧度
+		scale
+		缩放
+		-->
+		<canvas id="oc" width="400" height="400"></canvas>
+		<script type="text/javascript">
+			var oc = document.getElementById('oc');
+			var oo = oc.getContext('2d');
+//		oo.moveTo(100,200);
+//		oo.quadraticCurveTo(100,100,200,200)
+//			oo.stroke()
+//			
+//			oo.moveTo(200,200);
+//		oo.quadraticCurveTo(140,100,300,100,200,200)
+//			oo.stroke()
+
+		/*	oo.translate(100,100);
+			oo.rotate(45*Math.PI/180);
+			oo.scale(0.5,0.5)
+			oo.fillRect(0,0,100,100)*/
+			var num =0;
+			var num2 = 0;
+			var value = 1;
+			oo.translate(100,100);
+			setInterval(function(){
+				num++;
+				oo.save();
+				oo.clearRect(0,0,oc.width,oc.height)
+				if(num2 ==100){
+					value = -1
+				}else if(num2==0){
+					value = 1
+				}
+				num2 += value
+				oo.scale(num2*1/50,num2*1/50)
+				oo.rotate(num*Math.PI/180);
+				oo.translate(-50,-50);
+				oo.fillRect(0,0,100,100)
+				oo.restore();
+			},30);
+			
+			
+			
+		</script>
+	</body>
+</html>
